@@ -1,0 +1,11 @@
+[package]
+name = "my_lua_module"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "hello"
+crate-type = ["cdylib"]
+
+[dependencies]
+mlua = { version = "0.9", features = ["lua54", "module"] }
