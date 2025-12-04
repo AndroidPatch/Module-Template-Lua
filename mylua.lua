@@ -30,7 +30,7 @@ function M.version() --module version(recommended addition)
 return 1
 end
 
-function M.post_data_fs()
+function M.post_fs_data()
     info("post_mount_fs called")
     if is_lite_mode_enabled() then
         info("Lite mode is enabled")
@@ -42,7 +42,6 @@ function M.post_data_fs()
     else
         info("overlayfs disabled")
     end
-end
 end
 
 function M.post_mount()
