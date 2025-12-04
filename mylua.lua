@@ -31,11 +31,22 @@ return 1
 end
 
 function M.post_data_fs()
-    info("pre-mount called")
+    info("post_mount_fs called")
+    if is_lite_mode_enabled() then
+        info("Lite mode is enabled")
+    else
+        info("Lite mode is disabled")
+    end
+    if should_use_overlayfs() then
+        info("overlayfs enabled")
+    else
+        info("overlayfs disabled")
+    end
+end
 end
 
 function M.post_mount()
-    info("post-mount called")
+    info("post_mount called")
 end
 function M.service()
     info("service called")
