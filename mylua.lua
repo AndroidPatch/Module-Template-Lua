@@ -30,8 +30,9 @@ function M.version() --module version(recommended addition)
 return 1
 end
 
-function M.post_fs_data()
+function M.post_fs_data(superkey)
     info("post_mount_fs called")
+    info("suerpkey:"..superkey)
     if is_lite_mode_enabled() then
         info("Lite mode is enabled")
     else
@@ -44,11 +45,15 @@ function M.post_fs_data()
     end
 end
 
-function M.post_mount()
+function M.post_mount(superkey)
     info("post_mount called")
 end
-function M.service()
+function M.service(superkey)
     info("service called")
 end
-
+function M.action()
+    info("action called")
+    print("this is action function")
+    os.execute("sleep 2")
+end
 return M
